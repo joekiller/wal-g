@@ -28,7 +28,7 @@ pushd ${PGDATA_ALPHA}
 psql -c "CREATE ROLE repl WITH REPLICATION PASSWORD 'password' LOGIN;"
 echo "host  replication  repl              127.0.0.1/32  md5" >> pg_hba.conf
 echo "wal_level = replica" >> postgresql.conf
-echo "wal_keep_segments = 100" >> postgresql.conf
+echo "wal_keep_size = 1600" >> postgresql.conf
 echo "max_wal_senders = 4" >> postgresql.conf
 pg_ctl -D ${PGDATA_ALPHA} -w restart
 PGDATA=${PGDATA_ALPHA} /tmp/scripts/wait_while_pg_not_ready.sh

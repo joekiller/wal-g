@@ -6,7 +6,7 @@ MAIN_MONGO_PATH := main/mongo
 MAIN_FDB_PATH := main/fdb
 MAIN_GP_PATH := main/gp
 MAIN_ETCD_PATH := main/etcd
-DOCKER_COMMON := golang ubuntu ubuntu_20_04 s3
+DOCKER_COMMON := golang ubuntu s3
 CMD_FILES = $(wildcard cmd/**/*.go)
 PKG_FILES = $(wildcard internal/*.go internal/**/*.go internal/**/**/*.go internal/**/**/**/*.go)
 TEST_FILES = $(wildcard test/*.go testtools/*.go)
@@ -70,8 +70,7 @@ pg_save_image: install_and_build_pg pg_build_image
 	mkdir -p ${CACHE_FOLDER}
 	sudo rm -rf ${CACHE_FOLDER}/*
 	docker save ${IMAGE} | gzip -c > ${CACHE_FILE_DOCKER_PREFIX}
-	docker save wal-g/ubuntu:18.04 | gzip -c > ${CACHE_FILE_UBUNTU_18_04}
-	docker save wal-g/ubuntu:20.04 | gzip -c > ${CACHE_FILE_UBUNTU_20_04}
+	docker save wal-g/ubuntu:jammy | gzip -c > ${CACHE_FILE_UBUNTU}
 	docker save ${IMAGE_GOLANG} | gzip -c > ${CACHE_FILE_GOLANG}
 	ls ${CACHE_FOLDER}
 
@@ -141,8 +140,7 @@ load_docker_common:
 		echo "Rebuild";\
 		docker compose build $(DOCKER_COMMON);\
 	else\
-		docker load -i ${CACHE_FILE_UBUNTU_18_04};\
-		docker load -i ${CACHE_FILE_UBUNTU_20_04};\
+		docker load -i ${CACHE_FILE_UBUNTU};\
 		docker load -i ${CACHE_FILE_GOLANG};\
 	fi
 

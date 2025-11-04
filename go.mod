@@ -14,7 +14,7 @@ require (
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/cenkalti/backoff v2.2.1+incompatible
 	github.com/cucumber/godog v0.12.5
-	github.com/cyberdelia/lzo v0.0.0-20171006181345-d85071271a6f
+	github.com/cyberdelia/lzo v1.0.0
 	github.com/denisenkom/go-mssqldb v0.10.0
 	github.com/docker/docker v1.13.1
 	github.com/go-mysql-org/go-mysql v1.7.0

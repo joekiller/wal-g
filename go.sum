@@ -137,6 +137,8 @@ github.com/cucumber/messages-go/v16 v16.0.1 h1:fvkpwsLgnIm0qugftrw2YwNlio+ABe2Iu
 github.com/cucumber/messages-go/v16 v16.0.1/go.mod h1:EJcyR5Mm5ZuDsKJnT2N9KRnBK30BGjtYotDKpwQ0v6g=
 github.com/cyberdelia/lzo v0.0.0-20171006181345-d85071271a6f h1:xVwzPiGkbwW+IVG3gSL/2lRHbiGgdbtTM6ctagpBKL0=
 github.com/cyberdelia/lzo v0.0.0-20171006181345-d85071271a6f/go.mod h1:JlLvEOSII00CtpkusaXvTNwU1DdFRdh75AzBmy2G9xo=
+github.com/cyberdelia/lzo v1.0.0 h1:smmvcahczwI/VWSzZ7iikt50lubari5py3qL4hAEHII=
+github.com/cyberdelia/lzo v1.0.0/go.mod h1:UVNk6eM6Sozt1wx17TECJKuqmIY58TJOVeJxjlGGAGs=
 github.com/cznic/mathutil v0.0.0-20181122101859-297441e03548/go.mod h1:e6NPNENfs9mPDVNRekM7lKScauxd5kXTr1Mfyig6TDM=
 github.com/cznic/sortutil v0.0.0-20181122101858-f5f958428db8/go.mod h1:q2w6Bg5jeox1B+QkJ6Wp/+Vn0G/bo3f1uY7Fn3vivIQ=
 github.com/cznic/strutil v0.0.0-20171016134553-529a34b1c186/go.mod h1:AHHPPPXTw0h6pVabbcbyGRK1DckRn7r/STdZEeIDzZc=

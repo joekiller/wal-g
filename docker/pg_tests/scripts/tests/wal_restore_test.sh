@@ -56,7 +56,7 @@ cd ${PGDATA_ALPHA}
 echo "host  replication  repl              127.0.0.1/32  md5" >> pg_hba.conf
 {
   echo "wal_level = replica"
-  echo "wal_keep_segments = 3"
+  echo "wal_keep_size = 300"
   echo "max_wal_senders = 2"
   echo "hot_standby = on"
   echo "listen_addresses = 'localhost'"

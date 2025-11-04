@@ -1,11 +1,11 @@
-FROM wal-g/ubuntu:18.04
+FROM wal-g/ubuntu:jammy
 
-ENV PGDATA /var/lib/postgresql/10/main
-ENV PATH /usr/lib/postgresql/10/bin:$PATH
+ENV PGDATA /var/lib/postgresql/14/main
+ENV PATH /usr/lib/postgresql/14/bin:$PATH
 
 RUN apt-get update && \
     apt-get install --yes --no-install-recommends --no-install-suggests \
-    postgresql-10 \
+    postgresql-14 \
     postgresql-contrib \
     gnupg \
     gpg-agent \
@@ -13,14 +13,14 @@ RUN apt-get update && \
     bc \
     jq \
     s3cmd \
-    python3.7 \
+    python3.10 \
     python3-setuptools \
     python3-pip \
     lzop \
     pv && \
-    python3.7 -m pip install --upgrade pip && \
-    python3.7 -m pip install git+https://github.com/wal-e/wal-e.git && \
-    python3.7 -m pip install boto
+    python3.10 -m pip install --upgrade pip && \
+    python3.10 -m pip install git+https://github.com/wal-e/wal-e.git && \
+    python3.10 -m pip install boto
 
 COPY docker/pg/PGP_KEY /tmp/PGP_KEY
 COPY docker/pg/SSH_KEY /tmp/SSH_KEY
