@@ -45,6 +45,7 @@ jobs:
 
       - name: Run unittests
         run: |
+          Get-ChildItem Env: | Format-List
           make unittest
 
       - name: Build wal-g for SQL Server and PostgreSQL
